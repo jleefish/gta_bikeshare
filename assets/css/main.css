@@ -1,0 +1,141 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster|Roboto|Montserrat|Dancing+Script);
+
+body{
+    font-family:'Montserrat', sans-serif;
+}
+
+
+/*
+Home page
+*/
+#app-title{
+    font-family:'Dancing Script', sans-serif;
+    font-size:3em;
+    width:100%;
+    margin:0 auto;
+}
+
+#app-logo{
+    width:200px;
+    height:127px;
+    display:block;
+    margin:0 auto;
+    margin-bottom:20px;
+}
+
+#motd{
+    text-align: center;
+    font-size: 2em;
+}
+
+.card{
+    color:white;
+    text-align:center;
+    font-size:2em;
+    margin:10px;
+    padding:40px;       
+}
+
+.statistic{
+    text-align:center;
+    font-size:2em;
+    margin:0;
+}
+
+.card.percent-bikes{
+    background-color:#217EFF;
+}    
+
+.card.total-docks{
+    background-color:#50aa20;
+}
+
+.card.num-locations{
+    background-color:#C4394C;
+}
+
+/*
+Reports Page
+*/
+#report-table{
+    width:100%;
+    text-align: left;   
+    background-color:white; 
+    text-shadow:none;
+    color:black;
+
+}
+#report-table > tbody > tr > td{
+    padding: 5px;
+    padding-left:20px;
+}
+
+#report-table > thead > tr > th{
+    color:white;
+    background-color:black;
+    padding:15px;
+
+}
+
+#report-table tbody tr:nth-child(odd) {
+   background-color: #ccc;
+
+}
+
+#report-table tbody tr:hover{
+    background-color: #B8EDFF;
+}
+
+
+#report-table tfoot{
+    background-color:black;
+    color:#5f5;
+}
+
+#report-table > tfoot > tr > td{
+    padding:15px;
+
+}
+
+#report-table tfoot > tr > td:first-child {
+   text-align:right;
+
+}
+
+/*
+MAP PAGE
+*/
+
+div.gm-style-iw{
+    text-shadow:0px 0px #000;
+    color:black;
+}
+
+#map-canvas { 
+    width: 640px; 
+    height: 480px ;
+    margin:0 auto;
+
+}
+#wrapper {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+#availability-legend{
+    border:1px black solid;
+    background-color:#ddd;
+    font-weight: bold;
+    margin-bottom:15px;
+    color:black;
+    text-shadow:none;
+}
+#availability-legend-title{
+    font-weight:bold;
+    border:1px black solid;
+    background-color:#aaa;
+}
+
+

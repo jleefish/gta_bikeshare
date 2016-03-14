@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GTA-Bikeshare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- Jquery -->
+    <script src="vendors/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <!-- Jquery Mobile -->
+    <link rel="stylesheet" href="vendors/jquery.mobile-1.4.5.min.css" />
+    <script type="text/javascript" src="vendors/jquery.mobile-1.4.5.min.js"></script>
+    <!-- google maps-->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3nlY3mIMlBkgwWM5eeLMZQic5SU5rCgI&sensor=false"></script>
+    
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <script type="text/javascript" src="assets/js/bikeapp.js"></script>
+    <script type="text/javascript" src="assets/js/views/home.js"></script>
+    <script type="text/javascript" src="assets/js/views/map.js"></script>
+    <script type="text/javascript" src="assets/js/views/locations.js"></script>
+    <script type="text/javascript" src="assets/js/views/reports.js"></script>    
+    
+
+</head>
+<body>
+
+<!--
+HOME PAGE 
+-->
+<div data-role="page" data-theme="b" id="home-page">
+                
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#" class="ui-btn-active ui-state-persist">Home</a></li>
+            <li><a href="#reports-page">Reports</a></li>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#locations-page">Locations</a></li>
+        </ul>
+    </div>
+
+    <div data-role="header">
+        <h1 id="app-title">GTA Bikeshare</h1>
+        <img id="app-logo" src="assets/img/bike-logo.png"></img>
+    </div>
+
+    <div data-role="content">
+
+        <div id="motd"></div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="card percent-bikes">
+                    <h1 class="statistic"></h1>docks currently available
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="card total-docks">
+                    <h1 class="statistic"></h1>total docks
+                </div>
+            </div>
+             <div class="ui-block-a">
+                <div class="card num-locations">                        
+                    <h1 class="statistic"></h1>station locations
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!--
+Reports Page 
+-->
+<div data-role="page" data-theme="b" id="reports-page" >
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home-page" >Home</a></li>
+            <li><a href="#" class="ui-btn-active ui-state-persist">Reports</a></li>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#locations-page">Locations</a></li>
+        </ul>
+    </div>
+
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#detailed-reports-page">Bikeshare Report</a></li>
+        </ul>
+    </div>  
+</div>
+
+<!--
+Reports Detail Page 
+-->
+<div data-role="page" data-theme="b" id="detailed-reports-page" >
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home-page" >Home</a></li>
+            <li><a href="#reports-page" class="ui-btn-active ui-state-persist">Reports</a></li>
+            <li><a href="#map-page">Map</a></li>
+            <li><a href="#locations-page">Locations</a></li>
+        </ul>
+    </div>
+
+    <div data-role="header">      
+        <a href="#reports-page" data-add-back-btn="true">Back</a>      
+        <h1>Bikeshare Report</h1>
+    </div>
+
+    <div data-role="content">
+        <table id="report-table">
+            <thead>
+                <tr>
+                    <th>Station Name</th>
+                    <th>Total Docks</th>
+                    <th>Available Docks</th>
+                    <th>Available Bikes</th>
+                </tr>   
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+        </table>
+
+    </div>
+
+</div>  
+
+
+<!--
+Map Page 
+-->
+<div data-role="page" data-url="map-page" id="map-page" data-theme="b">
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#reports-page">Reports</a></li>
+            <li><a href="#" class="ui-btn-active ui-state-persist">Map</a></li>
+            <li><a href="#locations-page">Locations</a></li>
+        </ul>
+    </div>
+
+    <div data-role="content">
+        <div id="wrapper">
+          <div id="availability-legend-title">Available Bikes</div>
+          <div class="ui-grid-b" id="availability-legend">
+            <div class="ui-block-a"><img src="assets/img/cycling_gray.png"></div>
+            <div class="ui-block-b"><img src="assets/img/cycling_red.png"></div>
+            <div class="ui-block-c"><img src="assets/img/cycling_green.png"></div>
+            <div class="ui-block-a">0</div>
+            <div class="ui-block-b">0 - 5</div>
+            <div class="ui-block-c">5 +</div>
+          </div>
+        </div>
+        <div id="map-canvas"></div>
+    </div><!-- content -->
+</div>
+
+<!--
+Locations Page 
+-->
+<div data-role="page" id="locations-page" data-theme="b">
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#reports-page">Reports</a></li>
+            <li><a href="#map-page" >Map</a></li>
+            <li><a href="#" class="ui-btn-active ui-state-persist">Locations</a></li>
+        </ul>
+    </div>
+
+    <div data-role="content">
+        <div class="wrapper" data-iscroll>
+            <form>
+                <div class="ui-field-contain">
+                    <label for="sort">Sort By:</label>
+                    <select name="sort-list-dropdown" id="sort-list-dropdown">
+                        <option value="0" class="opt">Highest Availability of Bikes</option>
+                        <option value="1" class="opt">Lowest Availability of Bikes</option>
+                    </select>
+                </div>
+            </form>
+        <ul data-role="listview"  id="locations-list" data-inset="true" data-filter="true" ></ul>
+        </div>
+    </div>
+</div>
+ 
+<!--
+Locations Info Page 
+--> 
+<div data-role="page" id="location-info-page" data-theme="b">
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home-page">Home</a></li>
+            <li><a href="#reports-page">Reports</a></li>
+            <li><a href="#map-page" >Map</a></li>
+            <li><a href="#locations-page" class="ui-btn-active ui-state-persist">Locations</a></li>
+        </ul>
+    </div>
+
+    <div data-role="header">
+        <a href="#locations-page" data-add-back-btn= " true">Back</a>                                
+        <h3>Location Info</h3>
+    </div>        
+    <div data-role="content" id="info-panel">
+        <h2 class="station-name"></h2>
+
+        <div style="color:#3f3"><b>Status:</b> <span class="status"> </span></div>
+
+        <b>Docks Available:</b> <span class="available-docks"></span> out of <span class="total-docks"></span> 
+        <br>
+        <b>Available Bikes:</b> <span class="available-bikes"></span> 
+
+    </div>
+</div> 
+  
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html> 
+
