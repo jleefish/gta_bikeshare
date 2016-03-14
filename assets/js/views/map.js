@@ -25,9 +25,9 @@
 
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
 
-    // $( document ).bind( "pageshow", function( event, data ){
-    //   google.maps.event.trigger(map, 'resize');
-    // });
+    $( document ).bind( "pageshow", function( event, data ){
+      google.maps.event.trigger(map, 'resize');
+    });
 
     //adding markers    
     for (var i = 0; i < stationList.length; i++) {
