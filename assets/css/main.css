@@ -112,8 +112,8 @@ div.gm-style-iw{
 }
 
 #map-canvas { 
-    width: 640px; 
-    height: 480px ;
+    width: 80%; 
+    height: 60% ;
     margin:0 auto;
 
 }
