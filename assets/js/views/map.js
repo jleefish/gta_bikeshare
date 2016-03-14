@@ -25,10 +25,6 @@
 
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
 
-    // $( document ).bind( "pageshow", function( event, data ){
-    //   google.maps.event.trigger(map, 'resize');
-    // });
-
     //adding markers    
     for (var i = 0; i < stationList.length; i++) {
       var position = new google.maps.LatLng(stationList[i].latitude, stationList[i].longitude);
@@ -44,13 +40,6 @@
     }
 
   };
-
-  // google.maps.event.addDomListener(window, 'load', initialize);
-  // google.maps.event.addDomListener(window, "resize", function() {
-  //     var center = map.getCenter();
-  //     google.maps.event.trigger(map, "resize");
-  //     map.setCenter(center); 
-  // });
 
   var getMarkerImg = function(i){
     var availableBikes = stationList[i].availableBikes;
