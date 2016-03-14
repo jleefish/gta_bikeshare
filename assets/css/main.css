@@ -111,12 +111,12 @@ div.gm-style-iw{
     color:black;
 }
 
-/*#map-canvas { 
-    width: 640px; 
+#map-canvas { 
+ /*   width: 640px; 
     height: 480px ;
     margin:0 auto;
-
-}*/
+*/
+}
 #wrapper {
     width: 200px;
     margin: 0 auto;
