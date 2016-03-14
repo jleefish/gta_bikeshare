@@ -112,9 +112,9 @@ div.gm-style-iw{
 }
 
 #map-canvas { 
-    width: 80%; 
-    height: 60% ;
+    padding: 0;
     margin:0 auto;
+    height: 100%;
 
 }
 #wrapper {
