@@ -51,7 +51,14 @@ Home page
 }
 
 .card.num-locations{
-    background-color:#C4394C;
+    background-color:#C4394C;    
+    height: 90%;
+    margin: auto;
+}
+
+.ui-grid-a{
+    width: 100%;
+    text-align: center;
 }
 
 /*
