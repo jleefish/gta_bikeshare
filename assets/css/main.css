@@ -31,7 +31,7 @@ Home page
 .card{
     color:white;
     text-align:center;
-    font-size:2em;
+    /*font-size:2em;*/
     margin:10px;
     padding:40px;       
 }
@@ -52,8 +52,8 @@ Home page
 
 .card.num-locations{
     background-color:#C4394C;    
-    height: 90%;
-    margin: auto;
+    /*height: 90%;
+    margin: auto;*/
 }
 
 .ui-grid-a{
